@@ -10,3 +10,13 @@ function addStudent(name,age, gender,className, hobby){
   }
   students.push(student);
 }
+//update student info
+function updateStudent(name, newData){
+  //we start by finding the index of student in array
+  const index = students.findIndex((student)=> student.name.toLowerCase() === name.toLowerCase()
+  );
+  if(index !==1){
+    students[index]={...students[index],...newData};
+    return true;}
+  return false;
+}

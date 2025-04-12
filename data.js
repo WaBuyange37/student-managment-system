@@ -24,4 +24,7 @@ function updateStudent(name, newData){
 // let try examine both functions
 // 1
 addStudent('Kwizera Mugisha', 26, 'male', 'cst3', 'Music ');
+// console.log(students)
+//2- update name:'Karenzi Karake'
+updateStudent('kwizera Mugisha',{name:'Karenzi Karake', age: 32})
 console.log(students)

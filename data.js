@@ -6,6 +6,7 @@ function addStudent(name,age, gender,className, hobby){
     name: name.trim(),
     age: parseInt(age),
     gender: gender.trim().toUpperCase(),
+    className: className.trim(),
     hobby: hobby.trim(),
   }
   students.push(student);
@@ -20,3 +21,7 @@ function updateStudent(name, newData){
     return true;}
   return false;
 }
+// let try examine both functions
+// 1
+addStudent('Kwizera Mugisha', 26, 'male', 'cst3', 'Music ');
+console.log(students)

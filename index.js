@@ -40,11 +40,12 @@ function mySystem(){
         mySystem()
       case '3':
         rl.question("enter student's name", (name)=>{
-          let found = searchByName(students, name);
-          if(found!== -1)
-            console.table(found);
+          let found = students.findIndex((stdt)=>stdt.name.toLowerCase() === name.toLocaleLowerCase());
+          
+          if(found !== -1)
+            console.table(searchByName(students, name));
           else
-            console.log('not found');
+            console.log(`\n\tThe name you entered not found\n\tTry again later!`);
           mySystem();
         })
 

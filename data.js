@@ -1,5 +1,5 @@
 //array of student object, info + update student info
-const {countByGender, searchByName}= require("./utils")
+// const {countByGender, searchByName, searchByClass, searchByAge, searchByHobby}= require("./utils")
 const students = [];
 
 function addStudent(name,age, gender,className, hobby){
@@ -31,11 +31,13 @@ addStudent('Kwizera Mugisha', 26, 'male', 'cst3', 'Music ');
 // 2- update name:'Karenzi Karake'
 updateStudent('kwizera Mugisha',{name:'Karenzi Karake', age: 32})
 addStudent('Uburewe Ange', 24, 'female', 'cst4', 'Meat');
-addStudent('Kwizera Mugisha', 26, 'male', 'cst3', 'Music ');
+addStudent('Kwizera Mugisha', 26, 'male', 'cst3', 'JavaScript');
 addStudent('Butera Knowless', 39, 'female', 'Inlak', 'Music');
 addStudent('Paul Kagame', 66, 'male', 'president', 'Politics');
 // console.log(students)
-console.log(countByGender(students));
-console.log(searchByName(students,'Paul kagame'))
+// console.log(countByGender(students));
+// console.log(searchByName(students,'Paul kagame'))
+
+// console.log(searchByHobby(students, 'music'))
 
 module.exports = {students,addStudent, updateStudent};

@@ -34,8 +34,11 @@ function mySystem(){
               })
             })
           })
-        })
-        
+        });
+      case '2':
+        console.table(students)
+        mySystem()
+
 
     }
   })

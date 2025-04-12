@@ -38,6 +38,15 @@ function mySystem(){
       case '2':
         console.table(students)
         mySystem()
+      case '3':
+        rl.question("enter student's name", (name)=>{
+          let found = searchByName(students, name);
+          if(found!== -1)
+            console.table(found);
+          else
+            console.log('not found');
+          mySystem();
+        })
 
 
     }

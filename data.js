@@ -23,9 +23,15 @@ function updateStudent(name, newData){
 }
 // let try examine both functions
 // 1
-// addStudent('Kwizera Mugisha', 26, 'male', 'cst3', 'Music ');
+//now for trying utils a helper module I have to add more students manually
+
+addStudent('Kwizera Mugisha', 26, 'male', 'cst3', 'Music ');
 // console.log(students)
-//2- update name:'Karenzi Karake'
-// updateStudent('kwizera Mugisha',{name:'Karenzi Karake', age: 32})
-// console.log(students)
+// 2- update name:'Karenzi Karake'
+updateStudent('kwizera Mugisha',{name:'Karenzi Karake', age: 32})
+addStudent('Uburewe Ange', 24, 'female', 'cst4', 'Meat');
+addStudent('Kwizera Mugisha', 26, 'male', 'cst3', 'Music ');
+addStudent('Butera Knowless', 39, 'female', 'Inlak', 'Music');
+addStudent('Paul Kagame', 66, 'male', 'president', 'Politics');
+console.log(students)
 module.exports = {students,addStudent, updateStudent};

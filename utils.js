@@ -12,4 +12,9 @@ function countByGender(students){
     return {male, female};
 }
 
-module.exports ={countByGender}
+//search by name
+function searchByName(students, name){
+  return students.filter((student)=> student.name.trim().toLowerCase() === name.trim().toLowerCase())
+}
+
+module.exports ={countByGender, searchByName}

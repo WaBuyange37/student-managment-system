@@ -87,7 +87,16 @@ function mySystem(){
           }
         return mySystem();
         break;
-      
+      case '8':
+        rl.question("enter student's name to update: ", (name)=>{
+          rl.question(`which property to update for ${name}: `, (prop)=>{
+            rl.question(`then update ${name}'s ${prop}`, (value)=>{
+              updateStudent(name,{prop: value})
+              mySystem()
+            })
+          })
+        });
+        break;
         
 
       

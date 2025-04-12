@@ -35,11 +35,13 @@ function mySystem(){
             })
           })
         });
+        break;
       case '2':
         console.table(students)
         mySystem()
+        break;
       case '3':
-        rl.question("enter student's name", (name)=>{
+        rl.question("enter student's name: ", (name)=>{
           let found = students.findIndex((stdt)=>stdt.name.toLowerCase() === name.toLocaleLowerCase());
           
           if(found !== -1)
@@ -47,7 +49,48 @@ function mySystem(){
           else
             console.log(`\n\tThe name you entered not found\n\tTry again later!`);
           mySystem();
-        })
+        });
+        break;
+      case '4':
+        rl.question("enter student's ClassRoom: ", (className)=>{
+          let found = students.findIndex((stdt)=>stdt.className.toLowerCase() === className.toLocaleLowerCase());
+          
+          if(found !== -1)
+            console.table(searchByClass(students, className));
+          else
+            console.log(`\n\tThe classRoom entered not found\n\tTry again later!`);
+          mySystem();
+        });
+        break;
+      case '5':
+        rl.question('enter age: ', (age)=>{
+          console.table(searchByAge(students, age));
+          mySystem()
+        });
+        break;
+      case '6':
+        rl.question('enter hobby: ', (hobi)=>{
+          console.table(searchByHobby(students, hobi));
+          mySystem()
+        });
+        break;
+      case '7':
+        let ababazwe = countByGender(students);
+        console.log(`\tMale: ${ababazwe.male}\n\tFemale: ${ababazwe.female}`)
+        if(1)
+          {
+          if(ababazwe.female > ababazwe.male)
+          console.log("females are more than male in our class");
+          else
+            console.log("males are more than female in our class")
+          
+          }
+        return mySystem();
+        break;
+      
+        
+
+      
 
 
     }

@@ -89,12 +89,8 @@ function mySystem(){
         break;
       case '8':
         rl.question("enter student's name to update: ", (name)=>{
-          rl.question(`which property to update for ${name}: `, (prop)=>{
-            rl.question(`then update ${name}'s ${prop}`, (value)=>{
-              updateStudent(name,{prop: value})
-              mySystem()
-            })
-          })
+          ngahoUpdate(name, mySystem);
+          
         });
         break;
         
@@ -103,6 +99,22 @@ function mySystem(){
 
 
     }
+  })
+}
+function ngahoUpdate(name, callback){
+  rl.question("enter age:",(age)=>{
+    age=parseInt(age);
+    rl.question("enter gender:",(gender)=>{
+      gender=gender.trim().toLowerCase();
+      rl.question("enter className:",(className)=>{
+        className=className.trim().toLowerCase();
+        rl.question("enter hobby:",(hobby)=>{
+          hobby=hobby.trim().toLowerCase();
+          updateStudent(name,{age,gender,className,hobby})
+          callback();
+        })
+      })
+    })
   })
 }
 

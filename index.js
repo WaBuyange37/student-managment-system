@@ -100,7 +100,7 @@ function mySystem(){
         break;
       default:
         console.log("Wrong choice. Try again.\n");
-        menu();
+        mySystem()
     }
   })
 }

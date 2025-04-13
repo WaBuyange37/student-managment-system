@@ -93,14 +93,17 @@ function mySystem(){
           
         });
         break;
-        
-
-      
-
-
+      case '0':
+        console.log("👋 Exiting. Bye!");
+        rl.close();
+        break;
+      default:
+        console.log("Wrong choice. Try again.\n");
+        menu();
     }
   })
 }
+
 function ngahoUpdate(name, callback){
   rl.question("enter age:",(age)=>{
     age=parseInt(age);

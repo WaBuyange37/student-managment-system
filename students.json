@@ -1,3 +1,23 @@
 [
- 
+  {
+    "name": "Runama Patrick",
+    "age": 23,
+    "gender": "MALE",
+    "className": "cst",
+    "hobby": "js"
+  },
+  {
+    "name": "kwizera mugisha",
+    "age": 23,
+    "gender": "MALE",
+    "className": "s3",
+    "hobby": "food"
+  },
+  {
+    "name": "runama patrick",
+    "age": 23,
+    "gender": "MALE",
+    "className": "cst",
+    "hobby": "js"
+  }
 ]

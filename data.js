@@ -9,7 +9,7 @@ const filePath = path.join(__dirname, 'students.json');
 
 function loadStudents(){
   try{
-    const data = fs.readFileSync(dataPath, 'utf-8');
+    const data = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(data);
   }catch{
     return[]

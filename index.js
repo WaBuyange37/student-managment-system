@@ -38,7 +38,7 @@ function mySystem(){
         break;
       case '2':
         console.table(loadStudents())
-        mySystem()
+        return mySystem()
         break;
       case '3':
         rl.question("enter student's name: ", (name)=>{

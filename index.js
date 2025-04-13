@@ -1,4 +1,4 @@
-const {students,addStudent, updateStudent} = require('./data');
+const {students,addStudent, updateStudent, loadStudents} = require('./data');
 const {countByGender, searchByName, searchByClass, searchByAge, searchByHobby} = require("./utils");
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -37,7 +37,7 @@ function mySystem(){
         });
         break;
       case '2':
-        console.table(students)
+        console.table(loadStudents())
         mySystem()
         break;
       case '3':

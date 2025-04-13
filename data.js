@@ -9,12 +9,13 @@ const filePath = path.join(__dirname, 'students.json');
 
 function loadStudents(){
   try{
-    const data = fs.readFileSync(filePath, 'utf8')
-    return JSON.parse(data)
-  }catch(error){
+    const data = fs.readFileSync(dataPath, 'utf-8');
+    return JSON.parse(data);
+  }catch{
     return[]
   }
 }
+
 function saveStudents(students){
   fs.writeFileSync(filePath,JSON.stringify(students,null,2))
 }
@@ -38,25 +39,10 @@ function updateStudent(name, newData){
   );
   if(index !==1){
     students[index]={...students[index],...newData};
+    saveStudents(students);
     return true;}
   return false;
 }
-// let try examine both functions
-// 1
-//now for trying utils a helper module I have to add more students manually
 
-addStudent('Kwizera Mugisha', 26, 'male', 'cst3', 'Music ');
-// console.log(students)
-// 2- update name:'Karenzi Karake'
-updateStudent('kwizera Mugisha',{name:'Karenzi Karake', age: 32})
-addStudent('Uburewe Ange', 24, 'female', 'cst4', 'Meat');
-addStudent('Kwizera Mugisha', 26, 'male', 'cst3', 'JavaScript');
-addStudent('Butera Knowless', 39, 'female', 'Inlak', 'Music');
-addStudent('Paul Kagame', 66, 'male', 'president', 'Politics');
-// console.log(students)
-// console.log(countByGender(students));
-// console.log(searchByName(students,'Paul kagame'))
 
-// console.log(searchByHobby(students, 'music'))
-
-module.exports = {students,addStudent, updateStudent};
+module.exports = {students,addStudent, updateStudent, loadStudents};

@@ -2,7 +2,25 @@
 // const {countByGender, searchByName, searchByClass, searchByAge, searchByHobby}= require("./utils")
 const students = [];
 
+//for JSON
+const fs = require('fs');
+const path = require('path');
+const filePath = path.join(__dirname, 'students.json');
+
+function loadStudents(){
+  try{
+    const data = fs.readFileSync(filePath, 'utf8')
+    return JSON.parse(data)
+  }catch(error){
+    return[]
+  }
+}
+function saveStudents(students){
+  fs.writeFileSync(filePath,JSON.stringify(students,null,2))
+}
+
 function addStudent(name,age, gender,className, hobby){
+  const students = loadStudents();
   const student = {
     name: name.trim(),
     age: parseInt(age),
@@ -11,6 +29,7 @@ function addStudent(name,age, gender,className, hobby){
     hobby: hobby.trim(),
   }
   students.push(student);
+  saveStudents(students)
 }
 //update student info
 function updateStudent(name, newData){

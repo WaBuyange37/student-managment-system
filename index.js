@@ -1,10 +1,11 @@
-const {students,addStudent, updateStudent, loadStudents} = require('./data');
+const {addStudent, updateStudent, loadStudents} = require('./data');//deleting array and focus
 const {countByGender, searchByName, searchByClass, searchByAge, searchByHobby} = require("./utils");
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
+students = loadStudents()//tis for retriving form JSON
 function mySystem(){
   console.log(`
       ==============================
